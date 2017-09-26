@@ -10,3 +10,8 @@ body {
 .navbar {
     border-radius: 0;
 }
+
+footer .col-sm-4 {
+    text-align: center;
+    margin: 20px 0;
+}
