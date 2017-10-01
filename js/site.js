@@ -5,7 +5,7 @@ $(function() {
     localStorage.setItem("visits", visitor);
     
     if (visitor === 999999) {
-        $("#easterEgg1").append($("<button type=\"button\" class=\"btn btn-warning\">Si me ves, mancha te debe una asesoría gratuita.</button>"));
+        $("#easterEgg1").append($("<button type=\"button\" class=\"btn btn-warning\">Si me ves, <strong>Mancha</strong> te debe una asesoría gratuita.</button>"));
     }
 });
 
