@@ -15,3 +15,9 @@ footer .col-sm-4 {
     text-align: center;
     margin: 20px 0;
 }
+
+.vertical-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
