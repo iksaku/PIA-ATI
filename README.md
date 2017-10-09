@@ -1,3 +1,1 @@
-http://api.jquery.com/jQuery.getJSON/
-https://www.w3schools.com/bootstrap/bootstrap_carousel.asp 
-https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
+Código fuente del _Proyecto Integrador de Aprendizaje_ para la materia de **Aplicación de las Tecnologías de la Información** dentro del _Primer Semestre_.
