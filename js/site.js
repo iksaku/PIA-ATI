@@ -27,6 +27,6 @@ function updateVisitsCount() {
 
 function videoHelper() {
     $("video").each(function(index, element) {
-        $(this).append($('<div class="panel panel-danger vertical-center"><div class="panel-heading"><i class="fa fa-warning" aria-hidden="true"></i> <strong>Huston... Tenemos un problema</strong> <i class="fa fa-warning" aria-hidden="true"></i></div><div class="panel-body">Tu navegador no soporta la reproducción de videos, sin embargo, puedes descargar el video <a href="resources/videos/Demo.mp4" class="btn btn-xs btn-primary">aquí</a> y reproducirlo con tu aplicación favorita. <i class="fa fa-youtube-play"></i></div></div>'));
+        $(this).append($('<div class="panel panel-danger vertical-center"><div class="panel-heading"><i class="fa fa-warning" aria-hidden="true"></i> <strong>Huston... Tenemos un problema</strong> <i class="fa fa-warning" aria-hidden="true"></i></div><div class="panel-body">Tu navegador no soporta la reproducción de videos, sin embargo, puedes descargar el video <a href="' + $(this).attr("src") + '" class="btn btn-xs btn-primary">aquí</a> y reproducirlo con tu aplicación favorita. <i class="fa fa-youtube-play"></i></div></div>'));
     });
 }
