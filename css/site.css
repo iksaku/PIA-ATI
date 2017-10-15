@@ -3,12 +3,13 @@
 @viewport         { width: device-width; }
 
 body {
-    padding-top: 70px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 10px;
     color: #5a5a5a;
 }
 
 .navbar {
+    border: none;
     border-radius: 0;
 }
 
