@@ -27,8 +27,6 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="#"><span class="fa fa-home"></span></a></li>
-                <li><a href="#">Página 1</a></li>
-                <li><a href="#">Página 2</a></li> 
                 <li><a href="SobreNosotros.html"><span class="fa fa-users"></span> Sobre Nosotros</a></li> 
             </ul>
         </div>
@@ -38,8 +36,37 @@
 <div class="container">
     <div id="easterEgg1" class="text-center"></div>
     <br/>
-    <div class="embed-responsive embed-responsive-16by9">
-        <video class="embed-responsive-item" src="resources/videos/Demo.mp4" poster="resources/images/Demo.jpeg" playsinline controls></video>
+    
+    <div id="news" class="carousel slide" data-interval="4000" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#news" data-slide-to="0" class="active"></li>
+            <li data-target="#news" data-slide-to="1"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="media/images/Demo.jpeg" alt="Demo"/>
+                <div class="carousel-caption">
+                    <h3>This is a test</h3>
+                    <p><span class="fa fa-gear fa-2x faa-spin animated"></span></p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="media/images/Demo.jpeg" alt="Demo"/>
+                <div class="carousel-caption">
+                    <h3>Yay!</h3>
+                    <p><span class="fa fa-floppy-o fa-2x"></span><p/>
+                </div>
+            </div>
+        </div>
+        
+        <a class="carousel-control left" href="#news" data-slide="prev">
+            <span class="fa fa-chevron-left fa-2x control-left"></span>
+        </a>
+        
+        <a class="carousel-control right" href="#news" data-slide="next">
+            <span class="fa fa-chevron-right fa-2x control-right"></span>
+        </a>
     </div>
     
     <hr/>

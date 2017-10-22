@@ -3,14 +3,13 @@
 @viewport         { width: device-width; }
 
 body {
-    padding-top: 50px;
+    padding-top: 70px;e
     padding-bottom: 10px;
     color: #5a5a5a;
 }
 
 .navbar {
     border: none;
-    border-radius: 0;
 }
 
 footer .col-sm-4 {
@@ -22,4 +21,20 @@ footer .col-sm-4 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.carousel-control .control-left,
+.carousel-control .control-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+}
+
+.carousel-control .control-left {
+    left: 50%;
+}
+
+.carousel-control .control-right {
+    right: 50%;
 }
