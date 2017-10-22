@@ -2,41 +2,55 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Medio Ambiente - Equipo 4</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <title>Medio Ambiente</title>
+
+    <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/font-awesome-animation.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="css/clean-blog.css">
     <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="#">Medio Ambiente</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar-collapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#"><span class="fa fa-home"></span></a></li>
-                <li><a href="SobreNosotros.html"><span class="fa fa-users"></span> Sobre Nosotros</a></li> 
+                <li class="active"><a href="#"><span class="fa fa-home"></span> Inicio</a></li>
+                <li><a href="SobreNosotros.html"><span class="fa fa-users"></span> Sobre Nosotros</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
+<header class="intro-header" style="background-image: url('images/Home.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Blog del Medio Ambiente</h1>
+                    <hr class="small">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <div class="container">
     <div id="easterEgg1" class="text-center"></div>
     <br/>
-    
+
+    <!-- Contenido -->
     <div id="news" class="carousel slide" data-interval="4000" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#news" data-slide-to="0" class="active"></li>
@@ -45,17 +59,17 @@
         
         <div class="carousel-inner">
             <div class="item active">
-                <img src="media/images/Demo.jpeg" alt="Demo"/>
+                <img src="images/Demo.jpeg" alt="Demo"/>
                 <div class="carousel-caption">
                     <h3>This is a test</h3>
                     <p><span class="fa fa-gear fa-2x faa-spin animated"></span></p>
                 </div>
             </div>
             <div class="item">
-                <img src="media/images/Demo.jpeg" alt="Demo"/>
+                <img src="images/Demo.jpeg" alt="Demo"/>
                 <div class="carousel-caption">
                     <h3>Yay!</h3>
-                    <p><span class="fa fa-floppy-o fa-2x"></span><p/>
+                    <p><span class="fa fa-floppy-o fa-2x"></span></p>
                 </div>
             </div>
         </div>
@@ -68,29 +82,38 @@
             <span class="fa fa-chevron-right fa-2x control-right"></span>
         </a>
     </div>
-    
-    <hr/>
-    <footer>
-        <div class="row">
-            <div class="col-xs-4">© Equipo 4</div>
-            <div class="col-xs-4">
-                <div class="text-center">
-                    <a href="http://iksa.me/2ySncWN" class="btn btn-lg btn-social-icon btn-facebook">
-                        <span class="fa fa-facebook"></span></a>
-                    <a href="http://iksa.me/2yQVAkX" class="btn btn-lg btn-social-icon btn-twitter">
-                        <span class="fa fa-twitter"></span></a>
-                </div>
-            </div>
-            <div class="col-xs-4 text-right">
-                <i class="fa fa-globe"></i>
-                Visitas totales: <object id="visitCount"></object>
-            </div>
-        </div>
-    </footer>
+    <!-- Fin del contenido -->
 </div>
 
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<hr/>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="text-muted">
+                    Copyright <span class="fa fa-copyright"></span> Equipo 4
+                    <br/>
+                    <span class="fa fa-globe"></span> Visitas Totales: <span id="visitCount"></span>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <ul class="list-inline text-center">
+                    <li><a href="http://iksa.me/2ySncWN"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></a></li>
+                    <li><a href="http://iksa.me/2yQVAkX"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4">
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<script src="js/clean-blog.js"></script>
 <script src="js/site.js"></script>
 </body>
 </html>
