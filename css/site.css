@@ -3,7 +3,16 @@
 @viewport         { width: device-width; }
 
 header {
-    height: 510px;
+    max-height: 422px;
+    overflow: hidden;
+}
+
+header[class*="carousel"] {
+    background-color: #0085A1;
+}
+
+header .carousel-inner .item img {
+    max-height: 422px;
 }
 
 .person {
