@@ -15,6 +15,10 @@ header .carousel-inner .item img {
     max-height: 422px;
 }
 
+.post-author {
+    color: black;
+}
+
 .person {
     margin: 20px auto;
 }
