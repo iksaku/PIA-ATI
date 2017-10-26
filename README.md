@@ -1,9 +1,8 @@
-Código fuente del _Proyecto Integrador de Aprendizaje_ para la materia de **Aplicación de las Tecnologías de la Información** dentro del _Primer Semestre_.
-
-[x] Revisión #1
-[x] Revisión #2
-[ ] Revisión #3
-[ ] Revisión #4
-[ ] Revisión #5
-[ ] Revisión #6
-[ ] Revisión #7
+Source code of my _Proyecto Integrador de Aprendizaje_ for **Aplicación de las Tecnologías de la Información** in first Semester.
+[x] Revision #1
+[x] Revision #2
+[ ] Revision #3
+[ ] Revision #4
+[ ] Revision #5
+[ ] Revision #6
+[ ] Revision #7
