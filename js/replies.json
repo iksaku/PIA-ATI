@@ -1,0 +1,22 @@
+{
+    "users": {
+        "username": {
+            "name": "Real Name",
+            "avatar": "/images/Man.png"
+        }
+    },
+    "replies": {
+        "Page ID": [
+            {
+                "author": "username",
+                "timestamp": "...",
+                "content": "...",
+                "replies": [
+                    {...},
+                    {...},
+                    {...}
+                ]
+            }
+        ]
+    }
+}
