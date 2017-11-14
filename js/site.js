@@ -48,12 +48,13 @@ databaseModel = {
         }
     ],
     "comments": {
-        "post-001": [
+        "p01": [
             {
                 "author": "j.gonzalez",
                 "timestamp": "1510172639616",
                 "content": "Tttt"
-            }        ]
+            }
+        ]
     }
 };
 
@@ -94,4 +95,16 @@ function videoHelper() {
             )
         )
     });
+}
+
+comments = {
+    load: function(pageID) {
+        // TODO: Recursive scan post's comments and append
+    },
+    
+    comment: function(pageID, comment) {
+        // TODO: Comments ID
+        // TODO: Append comment to post on DB
+        // TODO: Append comment to post in browser 
+    }
 }
