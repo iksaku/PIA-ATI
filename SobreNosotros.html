@@ -42,7 +42,7 @@
 </nav>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
-    <audio class="center-block" src="audio/TuEstasAqui.mp3" preload="auto" autoplay controls><audio>
+    <audio class="music-player absolute-center" src="audio/TuEstasAqui.mp3" preload="auto" autoplay controls><audio>
 </nav>
 
 <header class="intro-header" style="background-image: url('images/AboutUs.jpg')">
@@ -92,10 +92,9 @@
 <script src="js/site.js"></script>
 <script>
     $(function() {
-        var users = database.get("users");
+        var users = ["j.gonzalez", "g.caldera", "l.orrante", "e.ferrer", "h.solis"];
         for (var i in users){
-            var user = users[i];
-            console.log(user.name);
+            var user = getUserData(users[i]);
             $("#cards").append(
                 $("<div></div>").addClass("col-sm-6 text-center person").append(
                     $("<div></div>").addClass("card").append(

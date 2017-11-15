@@ -8,6 +8,10 @@ function numberFormatting(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+months = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+]
+
 careers = {
     "its": "Ingeniería en Tecnologías de Software",
     "imtc": "Ingeniería en Mecatrónica"
@@ -45,14 +49,20 @@ databaseModel = {
             "name": "Habib Yosef Natanael Solis Flores",
             "career": "its",
             "photo": "images/Habib.jpg"
+        },
+        {
+            "username": "anonimo",
+            "name": "Algún Humano",
+            "career": "",
+            "photo": "images/Anonimo.png"
         }
     ],
     "comments": {
         "p01": [
             {
                 "author": "j.gonzalez",
-                "timestamp": "1510172639616",
-                "content": "Tttt"
+                "timestamp": 1510172639616,
+                "content": "Esto es un comentario de prueba... Tal parece que el sistema funciona perfectamente :)"
             }
         ]
     }
@@ -93,18 +103,80 @@ function videoHelper() {
                 ),
                 $("<div></div>").addClass("panel-body").text("Tu navegador no soporta la reproducción de videos, sin embargo, puedes descargar el video <a href=\"" + src + "\" class=\"btn btn-xs btn-primary\">aquí</a> y reproducirlo con tu aplicación favorita. <span class=\"fa fa-youtube-play\"></span>")
             )
-        )
+        );
     });
 }
 
-comments = {
-    load: function(pageID) {
-        // TODO: Recursive scan post's comments and append
-    },
-    
-    comment: function(pageID, comment) {
-        // TODO: Comments ID
-        // TODO: Append comment to post on DB
-        // TODO: Append comment to post in browser 
+function getUserData(username) {
+    var users = database.get("users");
+    for (var i in users) {
+        var user = users[i];
+        if (user.username != username) continue;
+        return user;
     }
 }
+
+comments = {
+    // Loads all default comments and appends them
+    load: function(pageId) {
+        var commentList = database.get("comments")[pageId];
+        for (var i in commentList) {
+            comments.appendComment(commentList[i]);
+        }
+    },
+    
+    // Saves a comment in DB and appends it to HTML
+    submitComment: function(pageId, comment) {
+        var commentList = database.get("comments");
+        commentList[pageId].push(comment);
+        database.set("comments", commentList);
+        
+        comments.appendComment(comment);
+    },
+    
+    // Appends the comment to the HTML
+    appendComment: function(comment) {
+        var user = getUserData(comment.author);
+        var date = new Date(comment.timestamp);
+        $(".comment-list").append(
+            $("<article></article>").addClass("row").append(
+                $("<div></div>").addClass("col-md-2 col-sm-2 hidden-xs").append(
+                    $("<figure></figure>").addClass("thumbnail").append(
+                        $("<img></img>").addClass("img-responsive img-circle center-block").attr("src", user.photo),
+                        $("<figcaption></figcaption>").addClass("text-center").text(comment.author)
+                    )
+                ),
+                $("<div></div>").addClass("col-md-10 col-sm-10").append(
+                    $("<div></div>").addClass("panel panel-default arrow left").append(
+                        $("<div></div>").addClass("panel-body").append(
+                            $("<header></header>").addClass("text-left").append(
+                                $("<div></div>").addClass("comment-user").append(
+                                    $("<span></span>").addClass("fa fa-user"),
+                                    " " + user.name
+                                ),
+                                $("<time></time>").addClass("comment-date").attr("datetime", [date.getDate(), date.getMonth() + 1, date.getFullYear()].join("-")).append(
+                                    $("<span></span>").addClass("fa fa-clock-o"),
+                                    " " + months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
+                                )
+                            ),
+                            $("<div></div>").addClass("comment-post").append(
+                                $("<p></p>").text(comment.content)
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+}
+
+$("#commentForm").submit(function(event) {
+    event.preventDefault();
+    var comment = {
+        "author": "anonimo",
+        "timestamp": Date.now(),
+        "content": $("#commentContent").val()
+    };
+    comments.submitComment("p01", comment);
+    $("#commentContent").val("");
+});

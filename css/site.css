@@ -43,6 +43,20 @@ header .carousel-inner .item img {
     transform: translateY(-50%);
 }
 
+.absolute-center {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.music-player {
+    width: 90%;
+    max-width: 1500px;
+}
+
 .carousel-control .control-left,
 .carousel-control .control-right {
     position: absolute;

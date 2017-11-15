@@ -42,7 +42,7 @@
 </nav>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
-    <audio class="center-block" src="audio/TuEstasAqui.mp3" preload="auto" autoplay controls><audio>
+    <audio class="music-player absolute-center" src="audio/TuEstasAqui.mp3" preload="auto" autoplay controls><audio>
 </nav>
 
 <header class="intro-header" style="background-image: url('images/post-bg.jpg')">
@@ -107,52 +107,16 @@
         <div class="col-lg-8">
             <h2 class="page-header">Comentarios</h2>
             <section class="comment-list">
-                <article class="row">
-                    <div class="col-md-2 col-sm-2 hidden-xs">
-                        <figure class="thumbnail">
-                            <img class="img-responsive" src="images/Man.png" />
-                            <figcaption class="text-center">Username</figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-10 col-sm-10">
-                        <div class="panel panel-default arrow left">
-                            <div class="panel-body">
-                                <header class="text-left">
-                                    <div class="comment-user"><span class="fa fa-user"></span> Name</div>
-                                    <time class="comment-date" datetime="16-12-2014 01:05"><span class="fa fa-clock-o"></span> Dec 16, 2014</time>
-                                </header>
-                                <div class="comment-post">
-                                    <p>Content</p>
-                                </div>
-                                <p class="text-right"><a href="#" class="btn btn-default btn-sm"><span class="fa fa-reply"></span> Reply</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="row">
-                    <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-0 hidden-xs">
-                        <figure class="thumbnail">
-                            <img class="img-responsive" src="images/Man.png" />
-                            <figcaption class="text-center">Username</figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-9 col-sm-9">
-                        <div class="panel panel-default arrow left">
-                            <div class="panel-heading right ">Reply</div>
-                            <div class="panel-body">
-                                <header class="text-left">
-                                    <div class="comment-user"><span class="fa fa-user"></span> Name</div>
-                                    <time class="comment-date" datetime="16-12-2014 01:05"><span class="fa fa-clock-o"></span> Dec 16, 2014</time>
-                                </header>
-                                <div class="comment-post">
-                                    <p>Content</p>
-                                </div>
-                                <p class="text-right"><a href="#" class="btn btn-default btn-sm"><span class="fa fa-reply"></span> Reply</a></p>
-                            </div>
-                        </div>
-                    <div>
-                </article>
             </section>
+            <hr/>
+            <form id="commentForm" class="col-sm-offset-2 form-inline" role="form">
+                <div class="form-group">
+                    <textarea id="commentContent" class="form-control" placeholder="¡Deja tu comentario!" rows="3" cols="50" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default btn-lg" type="submit">Enviar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -185,5 +149,10 @@
 <script src="js/respond.min.js"></script>
 <script src="js/clean-blog.js"></script>
 <script src="js/site.js"></script>
+<script>
+    $(function() {
+        comments.load("p01");
+    });
+</script>
 </body>
 </html>
