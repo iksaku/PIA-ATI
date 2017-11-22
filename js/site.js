@@ -54,17 +54,14 @@ databaseModel = {
             "username": "anonimo",
             "name": "Algún Humano",
             "career": "",
-            "photo": "images/Anonimo.png"
+            "photo": "../images/Anonimo.png"
         }
     ],
     "comments": {
-        "p01": [
-            {
-                "author": "j.gonzalez",
-                "timestamp": 1510172639616,
-                "content": "Esto es un comentario de prueba... Tal parece que el sistema funciona perfectamente :)"
-            }
-        ]
+        "p01": [],
+        "p02": [],
+        "p03": [],
+        "p04": []
     }
 };
 
@@ -81,7 +78,7 @@ var database = {
 
 function databaseHelper() {
     Object.keys(databaseModel).forEach(function(k) {
-        if (!database.get(k)) {
+        if (database.get(k)) {
             database.set(k, databaseModel[k]);
         }
     })
@@ -118,10 +115,12 @@ function getUserData(username) {
 
 comments = {
     pageId: null,
+    
     // Loads all default comments and appends them
     load: function(pageId) {
+        console.log("hi");
         comments.pageId = pageId;
-        var commentList = database.get("comments")[comments.pageId];
+        var commentList = database.get("comments")[pageId];
         for (var i in commentList) {
             comments.appendComment(commentList[i]);
         }
@@ -179,6 +178,6 @@ $("#commentForm").submit(function(event) {
         "timestamp": Date.now(),
         "content": $("#commentContent").val()
     };
-    comments.submitComment(comment);
+    comments.submitComment(comments.pageId, comment);
     $("#commentContent").val("");
 });
