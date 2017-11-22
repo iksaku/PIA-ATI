@@ -117,9 +117,11 @@ function getUserData(username) {
 }
 
 comments = {
+    pageId: null,
     // Loads all default comments and appends them
     load: function(pageId) {
-        var commentList = database.get("comments")[pageId];
+        comments.pageId = pageId;
+        var commentList = database.get("comments")[comments.pageId];
         for (var i in commentList) {
             comments.appendComment(commentList[i]);
         }
@@ -177,6 +179,6 @@ $("#commentForm").submit(function(event) {
         "timestamp": Date.now(),
         "content": $("#commentContent").val()
     };
-    comments.submitComment("p01", comment);
+    comments.submitComment(comment);
     $("#commentContent").val("");
 });
