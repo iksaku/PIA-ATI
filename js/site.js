@@ -78,7 +78,7 @@ var database = {
 
 function databaseHelper() {
     Object.keys(databaseModel).forEach(function(k) {
-        if (database.get(k)) {
+        if (!database.get(k)) {
             database.set(k, databaseModel[k]);
         }
     })
@@ -118,7 +118,6 @@ comments = {
     
     // Loads all default comments and appends them
     load: function(pageId) {
-        console.log("hi");
         comments.pageId = pageId;
         var commentList = database.get("comments")[pageId];
         for (var i in commentList) {
